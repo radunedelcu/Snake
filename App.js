@@ -10,10 +10,12 @@ import GameLoop from "./systems/GameLoop";
 export default function App() {
   const BoardSize = Constants.GRID_SIZE * Constants.CELL_SIZE;
   const engine = useRef(null);
+  global.tail = 0;
   const [isGameRunning, setIsGameRunning] = useState(true);
   const randomPositions = (min, max) => {
     return Math.floor(Math.random() * (max - min + 1) + min);
-  };
+  };   
+  
   const resetGame = () => {
     engine.current.swap({
       head: {
@@ -46,7 +48,23 @@ export default function App() {
     setIsGameRunning(true);
   };
   return (
-    <View style={styles.canvas}>
+    
+    <View style={styles.score}>
+      
+          <Text
+            style={{
+              color: "white",
+              marginTop: 15,
+              fontSize: 22,
+              padding: 10,
+              backgroundColor: "grey",
+              borderRadius: 10
+              
+            }}
+          >
+            Score:{}
+          </Text>
+          
       <GameEngine
         ref={engine}
         style={{

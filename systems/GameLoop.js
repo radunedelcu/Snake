@@ -61,12 +61,12 @@ const randomPositions = (min, max) => {
       if (
         head.position[0] == food.position[0] &&
         head.position[1] == food.position[1]
-      ) {
+        ) {
         tail.elements = [
           [head.position[0], head.position[1]],
           ...tail.elements,
         ];
-
+        
         food.position = [
           randomPositions(0, Constants.GRID_SIZE - 1),
           randomPositions(0, Constants.GRID_SIZE - 1),
