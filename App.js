@@ -49,7 +49,7 @@ export default function App() {
   };
   return (
     
-    <View style={styles.score}>
+    <View style={styles.canvas}>
       <GameEngine
         ref={engine}
         style={{
