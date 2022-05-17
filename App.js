@@ -50,21 +50,6 @@ export default function App() {
   return (
     
     <View style={styles.score}>
-      
-          <Text
-            style={{
-              color: "white",
-              marginTop: 15,
-              fontSize: 22,
-              padding: 10,
-              backgroundColor: "grey",
-              borderRadius: 10
-              
-            }}
-          >
-            Score:{}
-          </Text>
-          
       <GameEngine
         ref={engine}
         style={{
@@ -74,6 +59,7 @@ export default function App() {
           backgroundColor: "white",
         }}
         entities={{
+
           head: {
             position: [0, 0],
             size: Constants.CELL_SIZE,
@@ -102,7 +88,7 @@ export default function App() {
         onEvent={(e) => {
           switch (e) {
             case "game-over":
-              alert("Game over!");
+              alert(`Score:${global.tail*10}`);
               setIsGameRunning(false);
               return;
           }

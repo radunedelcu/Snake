@@ -66,7 +66,9 @@ const randomPositions = (min, max) => {
           [head.position[0], head.position[1]],
           ...tail.elements,
         ];
-        
+        global.tail = tail.elements.length;
+
+
         food.position = [
           randomPositions(0, Constants.GRID_SIZE - 1),
           randomPositions(0, Constants.GRID_SIZE - 1),
