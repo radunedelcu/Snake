@@ -8,10 +8,8 @@ export default function Head({ position, size }) {
         height: size,
         backgroundColor: "red",
         position: "absolute",
-        // left: position[0] * size,
-        // top: position[1] * size,
-        left: 0 * size,
-        top: 0 * size,
+        left: position[0] * size,
+        top: position[1] * size,
       }}
     ></View>
   );
